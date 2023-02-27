@@ -71,6 +71,16 @@ MQT is then used by first binding an `mqChange` event to an element, and then ca
 - `filter` (array) - an array of strings with which to filter media queries, e.g. `["700px"]` will consider only media queries whose constraint(s) mention "700px". Only matching media queries will be considered. Useful where the DOM contains a great many CSS sheets and it may impact performance to apply MQT to all of them.
 - `stylesheet` (stylesheet object) - a specific stylesheet object for MQT to use, rather than iterating over all the stylesheets under `document.stylesheets`. Again, useful if the DOM contains many attached stylesheets.
 
+The event will fire once on page load (for initial setup) and then again whenever relevant media queries change state.
+
+The event callback is passed an event object, which contains a sub-object, `detail`, containing:
+
+- `query` (string) - the constraint text of the media query whose status changed
+- `matches` (bool) - the media query's status - true if currently matches, false if it doesn't
+- `vars` (obj) - a map of CSS variable names to values present on the element to which MQT was scoped (see `element` argument above)
+
+Note: CSS variables are reported in `vars` without the `--` prefix e.g. `--myCSSVar` becomes the property `myCSSVar`.
+
 ## Use with reactive JS
 
 MQT can be particularly useful when used with a reactive JavaScript framework such as Vue. This is because it can bridge between the reactivity of the framework and the reactivity of media queries.
