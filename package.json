@@ -1,6 +1,6 @@
 {
   "name": "mq-trigger",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "Media Query Trigger is a tiny JS utility to get notified when a CSS media query becomes active or inactive - useful for bridging two forms of reactivity - media queries and reactive JS frameworks.",
   "main": "index.js",
   "scripts": {
