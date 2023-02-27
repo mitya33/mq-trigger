@@ -1,7 +1,7 @@
 {
   "name": "mq-trigger",
-  "version": "1.0.8",
-  "description": "Tiny JS utility to get notified when a CSS media query becomes active or inactive",
+  "version": "1.0.9",
+  "description": "Media Query Trigger is a tiny JS utility to get notified when a CSS media query becomes active or inactive - useful for bridging two forms of reactivity - media queries and reactive JS frameworks.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
