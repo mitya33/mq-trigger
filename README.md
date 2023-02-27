@@ -67,9 +67,9 @@ import { mqTrigger } from 'mq-trigger'
 
 MQT is then used by first binding an `mqChange` event to an element, and then calling `mqTrigger(element, filter, stylesheet)`. All arguments are optional, and work as follows:
 
-    - `element` (element reference) - the element to scope MQT to. If omitted, this will be `document`. Useful when working with components in reactive frameworks.
-    - `filter` (array) - an array of strings with which to filter media queries, e.g. `["700px"]` will consider only media queries whose constraint(s) mention "700px". Only matching media queries will be considered. Useful where the DOM contains a great many CSS sheets and it may impact performance to apply MQT to all of them.
-    - `stylesheet` (stylesheet object) - a specific stylesheet object for MQT to use, rather than iterating over all the stylesheets under `document.stylesheets`. Again, useful if the DOM contains many attached stylesheets.
+- `element` (element reference) - the element to scope MQT to. If omitted, this will be `document`. Useful when working with components in reactive frameworks.
+- `filter` (array) - an array of strings with which to filter media queries, e.g. `["700px"]` will consider only media queries whose constraint(s) mention "700px". Only matching media queries will be considered. Useful where the DOM contains a great many CSS sheets and it may impact performance to apply MQT to all of them.
+- `stylesheet` (stylesheet object) - a specific stylesheet object for MQT to use, rather than iterating over all the stylesheets under `document.stylesheets`. Again, useful if the DOM contains many attached stylesheets.
 
 ## Use with reactive JS
 
