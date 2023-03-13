@@ -45,7 +45,7 @@ JS:
 ```
 const p = document.querySelector('p');
 p.addEventListener('mqChange', evt =>
-    p.textContent = evt.detail.styles['--foo']
+    p.textContent = evt.detail.styles.getPropertyValue('--foo')
 );
 ```
 
@@ -77,7 +77,7 @@ The event callback is passed an event object, which contains a sub-object, `deta
 
 - `query` (string) - the constraint text of the media query whose status changed
 - `matches` (bool) - the media query's status - true if currently matches, false if it doesn't
-- `styles` (obj) - a live [`CSSStyleDeclaration`](https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleDeclaration) object of CSS properties (including variables) present on `element`
+- `styles` (obj) - a live [`CSSStyleDeclaration`](https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleDeclaration) object of CSS properties (including variables) present on `element`. These can be retrieved via [`getPropertyValue()`](https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleDeclaration/getPropertyValue).
 
 ## Use with reactive JS
 
@@ -109,7 +109,7 @@ mqTrigger(form.value);
 
 //set up MQT
 container.value.addEventListener('mqChange', evt => {
-    itemsToShow.value = parseInt(evt.detail.styles['--itemsToShow']);
+    itemsToShow.value = parseInt(evt.detail.styles.getPropertyValue('--itemsToShow'));
 });
 mqTrigger(container.value);
 </script>
