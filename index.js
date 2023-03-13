@@ -12,17 +12,10 @@ exports.mqTrigger = (scopingEl = globalThis.document, filter = [], stylesheet) =
 			})
 		});
 
-	function createEvt(mqList, el) {
-		const styles = getComputedStyle(el);
-		const vars = Object.values(styles).filter(style => /^--/.test(style)).reduce((acc, curr) => {
-			acc[curr.replace(/^--/, '')] = styles.getPropertyValue(curr);
-			return acc;
-		}, {});
-		return new CustomEvent('mqChange', {
-			detail: {
-				query: mqList.media,
-				matches: mqList.matches,
-				vars
-			}
-		})
+function createEvt(mqList, el) => new CustomEvent('mqChange', {
+	detail: {
+		query: mqList.media,
+		matches: mqList.matches,
+		getComputedStyle(el)
 	}
+});
