@@ -17,7 +17,7 @@ function createEvt(mqList, el) {
 		detail: {
 			query: mqList.media,
 			matches: mqList.matches,
-			getComputedStyle(el)
+			styles: getComputedStyle(el)
 		}
 	});
 }
